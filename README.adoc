@@ -1,0 +1,50 @@
+= Ribose Open Source Software Guidelines
+
+This guide reflects our current development practices we have adopted
+for all of our open source projects. This is the
+https://github.com/riboseinc/guides[Ribose fork] of the
+https://github.com/thoughtbot/guides[thoughtbot guide].
+It is mostly similar with some minor adjustments.
+
+If you are contributing to any of our open source projects then it's
+highly expected that you follow this guidelines, but if you have some
+different opinion about any of the rules then please open
+https://github.com/riboseinc/oss-ruby-contribution-guide/issues[an Issue] for
+detailed discussion.
+
+High level guidelines:
+
+* Be consistent.
+* Don't rewrite existing code to follow this guide.
+* Don't violate a guideline without a good reason.
+* A reason is good when you can convince a teammate.
+
+== General
+
+* https://github.com/thoughtbot/guides/tree/master/best-practices[Best Practices]
+* https://github.com/thoughtbot/guides/tree/master/protocol/git[Git Protocol]
+* https://github.com/thoughtbot/guides/tree/master/code-review[Code Review]
+
+== Ruby Projects
+
+For Ruby-based projects, we use
+https://github.com/thoughtbot/guides/tree/master/style/ruby[ruby-style-guide],
+which is based on the
+https://github.com/bbatsov/ruby-style-guide[bbatsov-guide]
+with some customized preferences.
+
+Once you start a new project, please add the following files to it to
+automate checks in every Pull Request.
+
+* link:style/.rubocop.yml[rubocop config]
+* link:style/.hound.yml[Hound CI config]
+
+Once everything is setup,
+https://houndci.com[Hound CI]
+should comment on each of the Pull Requests whenever there is a
+violations, and please do not merge it until you resolve those.
+
+== Credits
+
+This guide is maintained by https://www.ribose.com[Ribose Inc.]
+
