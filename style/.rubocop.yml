@@ -6,6 +6,7 @@ AllCops:
   Exclude:
   - "vendor/**/*"
   - "db/**/*"
+  - "bin/**/*"
   DisplayCopNames: false
   StyleGuideCopsOnly: false
 Rails:
