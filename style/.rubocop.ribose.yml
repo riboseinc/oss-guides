@@ -1,5 +1,3 @@
-inherit_from:
-  - https://raw.githubusercontent.com/thoughtbot/guides/9efc3f2e668d40682b33ee9d8c67a4c5d44652f0/style/ruby/.rubocop.yml
 AllCops:
   Include:
   - "**/*.rake"
