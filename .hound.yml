@@ -1,3 +1,3 @@
 ruby:
  Enabled: true
- config_file: hound/.rubocop.yml
+ config_file: ci/rubocop.yml
