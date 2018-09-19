@@ -10,6 +10,7 @@ AllCops:
   - "tmp/**/*"
   DisplayCopNames: false
   StyleGuideCopsOnly: false
+  TargetRubyVersion: 2.4
 Rails:
   Enabled: true
 Metrics/AbcSize:

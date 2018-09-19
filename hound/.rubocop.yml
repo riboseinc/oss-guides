@@ -7,9 +7,3 @@ inherit_from:
   - ".rubocop.tb.yml"
   # Overrides from Ribose
   - ".rubocop.ribose.yml"
-AllCops:
-  DisplayCopNames: false
-  StyleGuideCopsOnly: false
-  TargetRubyVersion: 2.4
-Rails:
-  Enabled: true
