@@ -33,16 +33,21 @@ which is based on the
 https://github.com/bbatsov/ruby-style-guide[bbatsov-guide]
 with some customized preferences.
 
-Once you start a new project, please add the following files to it to
-automate checks in every Pull Request.
+Once you start a new project, please copy the contents of
+link:for_new_projects/ruby[for_new_projects/ruby] directory to your project
+root.  Particularly, this directory contains:
 
-* link:style/.rubocop.yml[rubocop config]
-* link:style/.hound.yml[Hound CI config]
+* link:for_new_projects/ruby/.rubocop.yml[Rubocop config]
+* link:for_new_projects/ruby/.hound.yml[Hound CI config]
 
-Once everything is setup,
-https://houndci.com[Hound CI]
+Once everything is setup, https://houndci.com[Hound CI]
 should comment on each of the Pull Requests whenever there is a
 violations, and please do not merge it until you resolve those.
+
+=== Updating guides
+
+Source guides are kept in `src/rubocop`.  Whenever you update any of those,
+please run `rake build:rubocop` and commit generated changes.
 
 == Credits
 
