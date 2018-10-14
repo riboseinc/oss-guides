@@ -49,6 +49,27 @@ violations, and please do not merge it until you resolve those.
 Source guides are kept in `src/rubocop`.  Whenever you update any of those,
 please run `rake build:rubocop` and commit generated changes.
 
+=== Automatic Checks
+
+We use several tools to measure code quality in our projects.  The typical setup
+is:
+
+Code Climate::
+Performs additional code quality analysis (complexity etc).  Optionally,
+Code Climate is capable of running Rubocop too, however it is strongly
+discouraged to enable that.  Due to frequent breaking changes, style guide must
+be written for specific Rubocop version, and our style guide is meant to be
+compatible with Hound.  See
+https://github.com/riboseinc/oss-guides/pull/3#issuecomment-351883526[this]
+for respective discussion.  Moreover, Code Climate is capable of measuring test
+coverage, however we prefer CodeCov for that.
+CodeCov::
+Measures test coverage.
+Hound CI::
+Runs Rubocop, that is validates code against our style guide.
+Travis CI::
+Continuous integration.
+
 == Credits
 
 This guide is maintained by https://www.ribose.com[Ribose Inc.]
