@@ -9,6 +9,7 @@ AllCops:
   - "**/Gemfile"
   - "**/*.gemfile"
   - "**/Rakefile"
+  - "**/*.rb"
   DisplayCopNames: false
   StyleGuideCopsOnly: false
   TargetRubyVersion: 2.4
