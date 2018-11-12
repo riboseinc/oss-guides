@@ -4,11 +4,6 @@ AllCops:
   - vendor/**/*
   - db/**/*
   - tmp/**/*
-  Include:
-  - "**/*.rake"
-  - "**/Gemfile"
-  - "**/*.gemfile"
-  - "**/Rakefile"
   DisplayCopNames: false
   StyleGuideCopsOnly: false
   TargetRubyVersion: 2.4
