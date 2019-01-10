@@ -39,6 +39,7 @@ root.  Particularly, this directory contains:
 
 * link:for_new_projects/ruby/.rubocop.yml[Rubocop config]
 * link:for_new_projects/ruby/.hound.yml[Hound CI config]
+* link:for_new_projects/ruby/.editorconfig[Editor config]
 
 Once everything is setup, https://houndci.com[Hound CI]
 should comment on each of the Pull Requests whenever there is a
