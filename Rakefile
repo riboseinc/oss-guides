@@ -2,9 +2,9 @@ require "active_support"
 require "yaml"
 
 namespace :build do
-  task :default => :all
+  task default: :all
 
-  task :all => [:rubocop]
+  task all: [:rubocop]
 
   task :rubocop do
     ribose_guide = "src/rubocop/rubocop.ribose.yml"
@@ -16,7 +16,7 @@ namespace :build do
   def merge_yaml(*src, to:)
     aggregation = src.reduce({}) do |acc, file|
       full_path = path_in_project(file)
-      y = YAML.load(File.read(full_path))
+      y = YAML.safe_load(File.read(full_path))
       acc.deep_merge(y)
     end
 
@@ -27,6 +27,6 @@ namespace :build do
   end
 
   def path_in_project(path)
-  	File.expand_path(path, __dir__)
+    File.expand_path(path, __dir__)
   end
 end
