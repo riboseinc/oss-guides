@@ -7,6 +7,9 @@ AllCops:
   DisplayCopNames: false
   StyleGuideCopsOnly: false
   TargetRubyVersion: 2.4
+require:
+- rubocop-rails
+- rubocop-performance
 Naming/AccessorMethodName:
   Description: Check the naming of accessor methods for get_/set_.
   Enabled: false
@@ -126,7 +129,7 @@ Style/FrozenStringLiteralComment:
   Description: Add the frozen_string_literal comment to the top of files to help transition
     from Ruby 2.3.0 to Ruby 3.0.
   Enabled: false
-Style/FlipFlop:
+Lint/FlipFlop:
   Description: Checks for flip flops
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-flip-flops
   Enabled: false
@@ -255,6 +258,10 @@ Style/RaiseArgs:
 Style/RegexpLiteral:
   Description: Use / or %r around regular expressions.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-r
+  Enabled: false
+Style/Sample:
+  Description: Use `sample` instead of `shuffle.first`, `shuffle.last`, and `shuffle[Fixnum]`.
+  Reference: https://github.com/JuanitoFatas/fast-ruby#arrayshufflefirst-vs-arraysample-code
   Enabled: false
 Style/SelfAssignment:
   Description: Checks for places where self-assignment shorthand should have been
@@ -451,10 +458,6 @@ Performance/FlatMap:
 Performance/ReverseEach:
   Description: Use `reverse_each` instead of `reverse.each`.
   Reference: https://github.com/JuanitoFatas/fast-ruby#enumerablereverseeach-vs-enumerablereverse_each-code
-  Enabled: false
-Performance/Sample:
-  Description: Use `sample` instead of `shuffle.first`, `shuffle.last`, and `shuffle[Fixnum]`.
-  Reference: https://github.com/JuanitoFatas/fast-ruby#arrayshufflefirst-vs-arraysample-code
   Enabled: false
 Performance/Size:
   Description: Use `size` instead of `count` for counting the number of elements in
