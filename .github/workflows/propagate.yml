@@ -1,0 +1,37 @@
+name: Propagate to mirrors
+
+on: [push]
+
+env:
+  ID_RSA_PUB: "
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCi4se5HxHHRvKtRiU4/nDy0uobxbDdKy\
+    hMco2weBPiczp5/BJXeUWyklHioy7FxaM2zSCtfhsFKCQ/iG8pNT5qaJ+KsCQYOiPhsAad\
+    42QYbMY4EbhaDxrLRDnarcrGX1yAmOZXSL1ppUTnlGVOTYPKOrBohTeY4A+QhyYHLpKeNj\
+    HjKUFs+7QC3zQtl6sz2Mkh2N4gft78kimAyAqy+W3MLsIgIsjrIIh/qmo8ow9+toEf9bml\
+    hyk/iCEQ0HMYa7h+eF7M9nxiH/Og8NdVEYxz7fYC8WfCKRWoGcCfPImDoqKKdprYNGWVHk\
+    GSsEWsCUE24CHujBGU/IFGaSADhkX5gFNmSsps+r8EGG4AuUgE7ZE6rYWCaUmbBMXOAD+B\
+    BmBFAL1Roqilq/W4HfPPVLZO1SAyUNKMFZxu0DBeSM3ttIdcetisf5YOAjZ5+XDMKxsbrQ\
+    +ZyIqwn7cXPJxeChJImCG+YMn+NLw94jD042uB4+HWOO7oFrUfn68A4SBsdcb7mMVXL5Cc\
+    PqTQjmRVYmkNGfwGfDOCgXzuDJ8relS9QkjaBgh0lWQAPQjtph83x9WdUiJaS+A0RrMaN9\
+    AyRk8E8EQKbFgOXK368l1dy+FsHWsKA/r9EM3auc2TliRyYurLK1jC5x4A/oyshl3N3KR4\
+    8rpX9Kq4qUMFo589/q68BQ== oss-guides@ribose.com"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    if: github.repository == 'riboseinc/oss-guides'
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: shimataro/ssh-key-action@v1.5.0
+        with:
+          private-key: ${{ secrets.ID_RSA }}
+          public-key: ${{ env.ID_RSA_PUB }}
+
+      - name: Propagate to Metanorma
+        run: git push --mirror "${TARGET}"
+        shell: bash
+        env:
+          TARGET: "git@github.com:metanorma/oss-guides.git"
