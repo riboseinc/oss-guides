@@ -71,6 +71,28 @@ Runs Rubocop, that is validates code against our style guide.
 Travis CI::
 Continuous integration.
 
+=== Propagating guides to sister organizations
+
+This repository is mirrored in every GitHub organization that Ribose Inc.
+manages in order to workaround Hound CI limitation that organization-wide style
+guide must be kept in a repository within that organization.
+Mirrors are synchronized via GitHub Actions, specifically `propagate` workflow
+defined in this very repository.
+
+In order to set up another mirror, following steps should be performed:
+
+. Create a mirror repository on Github, e.g. `new_organization/oss-guides`.
+. Add another `git push` step to `propagate.yml` workflow.
+. Add following SSH key as a "`deploy key`" to newly created mirror repository,
+  and necessarily give it write access.
++
+----
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCi4se5HxHHRvKtRiU4/nDy0uobxbDdKyhMco2weBPiczp5/BJXeUWyklHioy7FxaM2zSCtfhsFKCQ/iG8pNT5qaJ+KsCQYOiPhsAad42QYbMY4EbhaDxrLRDnarcrGX1yAmOZXSL1ppUTnlGVOTYPKOrBohTeY4A+QhyYHLpKeNjHjKUFs+7QC3zQtl6sz2Mkh2N4gft78kimAyAqy+W3MLsIgIsjrIIh/qmo8ow9+toEf9bmlhyk/iCEQ0HMYa7h+eF7M9nxiH/Og8NdVEYxz7fYC8WfCKRWoGcCfPImDoqKKdprYNGWVHkGSsEWsCUE24CHujBGU/IFGaSADhkX5gFNmSsps+r8EGG4AuUgE7ZE6rYWCaUmbBMXOAD+BBmBFAL1Roqilq/W4HfPPVLZO1SAyUNKMFZxu0DBeSM3ttIdcetisf5YOAjZ5+XDMKxsbrQ+ZyIqwn7cXPJxeChJImCG+YMn+NLw94jD042uB4+HWOO7oFrUfn68A4SBsdcb7mMVXL5CcPqTQjmRVYmkNGfwGfDOCgXzuDJ8relS9QkjaBgh0lWQAPQjtph83x9WdUiJaS+A0RrMaN9AyRk8E8EQKbFgOXK368l1dy+FsHWsKA/r9EM3auc2TliRyYurLK1jC5x4A/oyshl3N3KR48rpX9Kq4qUMFo589/q68BQ== oss-guides@ribose.com
+----
++
+You can find information on deploy keys here:
+https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys.
+
 == Credits
 
 This guide is maintained by https://www.ribose.com[Ribose Inc.]
