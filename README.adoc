@@ -82,8 +82,8 @@ defined in this very repository.
 In order to set up another mirror, following steps should be performed:
 
 . Create a mirror repository on Github, e.g. `new_organization/oss-guides`.
-. Add another "git push" step to `propagate.yml` workflow.
-. Add following SSH key as a deploy key to newly created mirror repository,
+. Add another `git push` step to `propagate.yml` workflow.
+. Add following SSH key as a "`deploy key`" to newly created mirror repository,
   and necessarily give it write access.
 +
 ----
