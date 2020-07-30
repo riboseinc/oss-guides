@@ -21,6 +21,8 @@ jobs:
           - glossarist/oss-guides
           - interscript/oss-guides
           - rnpgp/oss-guides
+          - fontist/oss-guides
+          - ituob/oss-guides
 
     steps:
       - uses: actions/checkout@v2
