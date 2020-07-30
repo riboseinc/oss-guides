@@ -11,6 +11,17 @@ jobs:
     timeout-minutes: 3
     if: github.repository == 'riboseinc/oss-guides'
 
+    strategy:
+      matrix:
+        repository:
+          - metanorma/oss-guides
+          - relaton/oss-guides
+          - lutaml/oss-guides
+          - geolexica/oss-guides
+          - glossarist/oss-guides
+          - interscript/oss-guides
+          - rnpgp/oss-guides
+
     steps:
       - uses: actions/checkout@v2
         with:
@@ -21,4 +32,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.RIBOSE_CI_OSS_GUIDE_TOKEN }}
-          repository: metanorma/oss-guides
+          repository: ${{ matrix.repository }}
