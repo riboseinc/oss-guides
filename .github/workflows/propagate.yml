@@ -1,6 +1,9 @@
 name: Propagate to mirrors
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
