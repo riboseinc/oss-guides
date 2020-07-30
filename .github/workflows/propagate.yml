@@ -14,16 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
-      - name: Install SSH key
-        uses: shimataro/ssh-key-action@v2
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
-          key: ${{ secrets.ID_RSA }}
-          known_hosts: github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==
-
-      - name: Propagate to Metanorma
-        run: git push --mirror "${TARGET}"
-        shell: bash
-        env:
-          TARGET: "git@github.com:metanorma/oss-guides.git"
+          github_token: ${{ secrets.RIBOSE_CI_OSS_GUIDE_TOKEN }}
+          repository: https://github.com/metanorma/oss-guides
