@@ -170,9 +170,9 @@ Style/LineEndConcatenation:
     end.
   Enabled: false
 Layout/LineLength:
-  Description: Limit lines to 120 characters.
+  Description: Limit lines to 80 characters.
   StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#max-line-length
-  Max: 120
+  Max: 80
   Enabled: true
   AllowURI: true
   URISchemes:
