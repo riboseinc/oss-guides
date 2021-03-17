@@ -86,7 +86,7 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   CountComments: true
   Max: 25
-  ExcludedMethods: []
+  IgnoredMethods: []
   Exclude:
   - spec/**/*
 Metrics/CyclomaticComplexity:
@@ -169,7 +169,7 @@ Style/LineEndConcatenation:
   Description: Use \ instead of + or << to concatenate two string literals at line
     end.
   Enabled: false
-Metrics/LineLength:
+Layout/LineLength:
   Description: Limit lines to 120 characters.
   StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#max-line-length
   Max: 120
