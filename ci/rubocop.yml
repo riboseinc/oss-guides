@@ -86,7 +86,7 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   CountComments: true
   Max: 25
-  IgnoredMethods: []
+  ExcludedMethods: []
   Exclude:
   - spec/**/*
 Metrics/CyclomaticComplexity:
@@ -169,15 +169,6 @@ Style/LineEndConcatenation:
   Description: Use \ instead of + or << to concatenate two string literals at line
     end.
   Enabled: false
-Layout/LineLength:
-  Description: Limit lines to 80 characters.
-  StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#max-line-length
-  Max: 80
-  Enabled: true
-  AllowURI: true
-  URISchemes:
-  - http
-  - https
 Metrics/MethodLength:
   Description: Avoid methods longer than 10 lines of code.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#short-methods
@@ -367,6 +358,15 @@ Layout/InitialIndentation:
   Description: Checks the indentation of the first non-blank non-comment line in a
     file.
   Enabled: false
+Layout/LineLength:
+  Description: Limit lines to 80 characters.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#80-character-limits
+  Max: 80
+  Enabled: true
+  AllowURI: true
+  URISchemes:
+  - http
+  - https
 Lint/AmbiguousOperator:
   Description: Checks for ambiguous operators in the first argument of a method invocation
     without parentheses.
