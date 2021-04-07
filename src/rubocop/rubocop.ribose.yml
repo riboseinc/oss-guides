@@ -31,7 +31,7 @@ Metrics/CyclomaticComplexity:
     cases needed to validate a method.
   Enabled: true
   Max: 6
-Metrics/LineLength:
+Layout/LineLength:
   Description: Limit lines to 80 characters.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#80-character-limits
   Enabled: true
@@ -59,3 +59,11 @@ Metrics/PerceivedComplexity:
     reader.
   Enabled: true
   Max: 7
+
+# From 322cb2c179a721fed382a691124185a01811cf11
+Layout/DotPosition:
+  EnforcedStyle: leading
+
+# From 469568118711e296909e267f6420f67c0747f83d
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: no_comma
