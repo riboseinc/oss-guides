@@ -22,11 +22,23 @@ namespace :build do
 
     target_full_path = path_in_project(to)
     FileUtils.mkdir_p(File.dirname(target_full_path))
-    File.write(to, YAML.dump(aggregation))
+    File.write(to, [yaml_header, YAML.dump(aggregation)].join("\n"))
     aggregation
   end
 
   def path_in_project(path)
     File.expand_path(path, __dir__)
+  end
+
+  def yaml_header
+    (<<~YAML).chomp
+      ############################################
+      #       This file is auto-generated.       #
+      #           DO NOT EDIT DIRECTLY           #
+      #    OR YOUR CHANGES MAY BE OVERWRITTEN    #
+      #        Edit source files instead.        #
+      #          See README for details.         #
+      ############################################
+    YAML
   end
 end
