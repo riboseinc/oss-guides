@@ -69,3 +69,8 @@ Style/TrailingCommaInArguments:
 # From 322cb2c179a721fed382a691124185a01811cf11
 Layout/DotPosition:
   EnforcedStyle: leading
+
+# Delete following lines after migrating to Rubocop 2.x, as these checks
+# will be enabled by default.
+Style/ArgumentsForwarding:
+  Enabled: true
