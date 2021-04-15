@@ -61,6 +61,8 @@ Metrics/PerceivedComplexity:
     reader.
   Enabled: true
   Max: 7
+Style/CollectionMethods:
+  Enabled: false
 
 # From 322cb2c179a721fed382a691124185a01811cf11
 Layout/DotPosition:
