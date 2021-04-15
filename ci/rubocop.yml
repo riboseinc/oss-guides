@@ -510,7 +510,7 @@ Rails/Validation:
   Description: Use validates :attribute, hash of validations.
   Enabled: false
 Rails:
-  Enabled: true
+  Enabled: false
 Metrics/PerceivedComplexity:
   Description: A complexity metric geared towards measuring complexity for a human
     reader.
