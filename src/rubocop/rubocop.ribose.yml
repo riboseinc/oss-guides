@@ -63,11 +63,9 @@ Metrics/PerceivedComplexity:
   Max: 7
 Style/CollectionMethods:
   Enabled: false
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
 
 # From 322cb2c179a721fed382a691124185a01811cf11
 Layout/DotPosition:
   EnforcedStyle: leading
-
-# From 469568118711e296909e267f6420f67c0747f83d
-Style/TrailingCommaInArguments:
-  EnforcedStyleForMultiline: no_comma
