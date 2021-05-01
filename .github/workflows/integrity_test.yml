@@ -3,6 +3,7 @@ name: Test integrity
 on:
   - push
   - pull_request
+  - workflow_dispatch
 
 jobs:
   rubocop_integrity:
