@@ -22,6 +22,7 @@ jobs:
           - ituob/oss-guides
           - lutaml/oss-guides
           - metanorma/oss-guides
+          - plurimath/oss-guides
           - relaton/oss-guides
           - rnpgp/oss-guides
 
