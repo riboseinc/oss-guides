@@ -15,15 +15,15 @@ jobs:
     strategy:
       matrix:
         repository:
-          - metanorma/oss-guides
-          - relaton/oss-guides
-          - lutaml/oss-guides
+          - fontist/oss-guides
           - geolexica/oss-guides
           - glossarist/oss-guides
           - interscript/oss-guides
-          - rnpgp/oss-guides
-          - fontist/oss-guides
           - ituob/oss-guides
+          - lutaml/oss-guides
+          - metanorma/oss-guides
+          - relaton/oss-guides
+          - rnpgp/oss-guides
 
     steps:
       - uses: actions/checkout@v2
