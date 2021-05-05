@@ -70,7 +70,7 @@ Style/ClassVars:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-class-vars
   Enabled: false
 Style/CollectionMethods:
-  Enabled: true
+  Enabled: false
   PreferredMethods:
     find: detect
     inject: reduce
@@ -290,7 +290,7 @@ Style/StringLiterals:
 Style/TrailingCommaInArguments:
   Description: Checks for trailing comma in argument lists.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-trailing-array-commas
-  EnforcedStyleForMultiline: no_comma
+  EnforcedStyleForMultiline: comma
   SupportedStylesForMultiline:
   - comma
   - consistent_comma
@@ -516,3 +516,5 @@ Metrics/PerceivedComplexity:
     reader.
   Enabled: true
   Max: 7
+Style/ArgumentsForwarding:
+  Enabled: true
