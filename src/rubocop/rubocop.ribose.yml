@@ -5,11 +5,7 @@ AllCops:
   - "tmp/**/*"
   DisplayCopNames: false
   StyleGuideCopsOnly: false
-  TargetRubyVersion: 2.4
-# These checks are irrelevant for most of our projects as they do not use Rails.
-# They should be re-enabled on project level if applicable.
-Rails:
-  Enabled: false
+  TargetRubyVersion: 2.5
 Layout/LineLength:
   Description: Limit lines to 80 characters.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#80-character-limits
