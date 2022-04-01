@@ -70,3 +70,6 @@ Layout/DotPosition:
 # will be enabled by default.
 Style/ArgumentsForwarding:
   Enabled: true
+
+Gemspec/RequireMFA:
+  Enabled: false
