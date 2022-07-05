@@ -46,6 +46,7 @@ Metrics/MethodLength:
   Max: 10
   Exclude:
   - "spec/**/*"
+  CountAsOne: ['array', 'heredoc']
 Metrics/ParameterLists:
   Description: Avoid long parameter lists.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#too-many-params
