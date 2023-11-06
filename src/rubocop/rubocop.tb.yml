@@ -485,6 +485,10 @@ Lint/DuplicateHashKey:
   Description: 'Check for duplicate keys in hash literals.'
   Enabled: false
 
+Lint/DuplicateRegexpCharacterClassElement:
+  Description: 'Checks for duplicate elements in Regexp character classes.'
+  Enabled: true
+
 Lint/EachWithObjectArgument:
   Description: 'Check for immutable argument given to each_with_object.'
   Enabled: false
@@ -561,6 +565,12 @@ Performance/CaseWhenSplat:
                   Place `when` conditions that use splat at the end
                   of the list of `when` branches.
   Enabled: false
+
+Performance/ConstantRegexp:
+  Description: >-
+                  Finds regular expressions with dynamic components that are
+                  all constants.
+  Enabled: true
 
 Performance/Count:
   Description: >-
