@@ -11,11 +11,13 @@ AllCops:
   - vendor/**/*
   - db/**/*
   - tmp/**/*
+  - db/schema.rb
   DisplayCopNames: false
   StyleGuideCopsOnly: false
   TargetRubyVersion: 3.1
 require:
 - rubocop-performance
+- rubocop-rails
 Naming/AccessorMethodName:
   Description: Check the naming of accessor methods for get_/set_.
   Enabled: false
@@ -491,4 +493,40 @@ Metrics/PerceivedComplexity:
 Style/ArgumentsForwarding:
   Enabled: true
 Gemspec/RequireMFA:
+  Enabled: false
+Rails/Delegate:
+  Description: Prefer delegate method for delegations.
+  Enabled: false
+Rails/ActionFilter:
+  Description: Enforces consistent use of action filter methods.
+  Enabled: false
+Rails/Date:
+  Description: Checks the correct usage of date aware methods, such as Date.today,
+    Date.current etc.
+  Enabled: false
+Rails/FindBy:
+  Description: Prefer find_by over where.first.
+  Enabled: false
+Rails/FindEach:
+  Description: Prefer all.find_each over all.find.
+  Enabled: false
+Rails/HasAndBelongsToMany:
+  Description: Prefer has_many :through to has_and_belongs_to_many.
+  Enabled: false
+Rails/Output:
+  Description: Checks for calls to puts, print, etc.
+  Enabled: false
+Rails/ReadWriteAttribute:
+  Description: Checks for read_attribute(:attr) and write_attribute(:attr, val).
+  Enabled: false
+Rails/ScopeArgs:
+  Description: Checks the arguments of ActiveRecord scopes.
+  Enabled: false
+Rails/TimeZone:
+  Description: Checks the correct usage of time zone aware methods.
+  StyleGuide: https://github.com/bbatsov/rails-style-guide#time
+  Reference: http://danilenko.org/2012/7/6/rails_timezones
+  Enabled: false
+Rails/Validation:
+  Description: Use validates :attribute, hash of validations.
   Enabled: false

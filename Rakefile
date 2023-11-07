@@ -1,16 +1,60 @@
-require "active_support"
+# The 'deep_merge()' from 'activesupport' does not merge arrays.
+# We need to be able to merge arrays as there are e.g. arrays of rubocop
+# plugins from different input guides.
+require "deep_merge"
 require "yaml"
+
+# Define input and output directories
+def dirs(key)
+  {
+    rubocop: "src/rubocop",
+    ci_out:  "ci",
+  }[key]
+end
+
+# Define input file paths
+def input_guides(key)
+  {
+    ribose: "#{dirs(:rubocop)}/rubocop.ribose.yml",
+    thoughtbot: "#{dirs(:rubocop)}/rubocop.tb.yml",
+    rails: "#{dirs(:rubocop)}/rubocop.rails.yml",
+  }[key]
+end
+
+# Define output file paths
+def output_guides(key)
+  {
+    default: "#{dirs(:ci_out)}/rubocop.yml",
+    rails: "#{dirs(:ci_out)}/rubocop.rails.yml",
+  }[key]
+end
+
+# Define input guides for each rubocop flavour
+def default_guide_inputs
+  %i[thoughtbot ribose]
+end
+
+def rails_guide_inputs
+  default_guide_inputs + %i[rails]
+end
 
 namespace :build do
   task default: :all
 
   task all: [:rubocop]
 
-  task :rubocop do
-    ribose_guide = "src/rubocop/rubocop.ribose.yml"
-    thoughtbot_guide = "src/rubocop/rubocop.tb.yml"
-    output_guide = "ci/rubocop.yml"
-    merge_yaml(thoughtbot_guide, ribose_guide, to: output_guide)
+  task rubocop: %i[rubocop:default rubocop:rails]
+
+  task :"rubocop:default" do
+    merge_yaml_i(*default_guide_inputs, to: output_guides(:default))
+  end
+
+  task :"rubocop:rails" do
+    merge_yaml_i(*rails_guide_inputs, to: output_guides(:rails))
+  end
+
+  def merge_yaml_i(*src, to:)
+    merge_yaml(*src.map(&method(:input_guides)), to: to)
   end
 
   def merge_yaml(*src, to:)
