@@ -21,10 +21,10 @@ jobs:
           ruby-version: "3.0"
 
       - name: Install gems
-        run: gem install activesupport
+        run: bundle
 
       - name: Recompile the style book
-        run: rake build:rubocop
+        run: bundle exec rake build:rubocop
 
       - name: Ensure no differences
         run: |
