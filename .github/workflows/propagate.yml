@@ -7,7 +7,11 @@ on:
   workflow_dispatch:
 
 jobs:
+  test:
+    uses: ./.github/workflows/integrity_test.yml
+
   build:
+    needs: [test]
     runs-on: ubuntu-latest
     timeout-minutes: 3
     if: github.repository == 'riboseinc/oss-guides'
