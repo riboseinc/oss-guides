@@ -30,10 +30,10 @@ jobs:
       - name: Ensure no differences
         run: |
           if [ ! -z "$(git status --short)" ]; then
-            echo "--------------------------------------"
-            echo "     Style book is not recompiled     "
-            echo "  ('rake build:rubocop' was not run)  "
-            echo "  or compiled files have been edited  "
-            echo "        instead of source ones        "
-            echo "--------------------------------------"
-          fi
+            echo "--------------------------------------------------"
+            echo "           Style book is not recompiled           "
+            echo "  ('bundle exec rake build:rubocop' was not run)  "
+            echo "        or compiled files have been edited        "
+            echo "              instead of source ones              "
+            echo "--------------------------------------------------"
+          fi >&2
