@@ -66,7 +66,7 @@ namespace :build do
 
     target_full_path = path_in_project(to)
     FileUtils.mkdir_p(File.dirname(target_full_path))
-    File.write(to, [yaml_header, YAML.dump(aggregation)].join("\n"))
+    File.write(to, [yaml_header(*src), YAML.dump(aggregation)].join("\n"))
     aggregation
   end
 
@@ -74,7 +74,7 @@ namespace :build do
     File.expand_path(path, __dir__)
   end
 
-  def yaml_header
+  def yaml_header(*src)
     (<<~YAML).chomp
       ############################################
       #       This file is auto-generated.       #
@@ -82,6 +82,11 @@ namespace :build do
       #    OR YOUR CHANGES MAY BE OVERWRITTEN    #
       #        Edit source files instead.        #
       #          See README for details.         #
+      ############################################
+      #
+      # Source files:
+      #{src.map { |f| "#   - #{f}" }.join("\n")}
+      #
       ############################################
     YAML
   end

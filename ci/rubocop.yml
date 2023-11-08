@@ -5,6 +5,12 @@
 #        Edit source files instead.        #
 #          See README for details.         #
 ############################################
+#
+# Source files:
+#   - src/rubocop/rubocop.tb.yml
+#   - src/rubocop/rubocop.ribose.yml
+#
+############################################
 ---
 AllCops:
   Exclude:
