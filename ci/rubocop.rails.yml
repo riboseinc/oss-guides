@@ -15,10 +15,10 @@
 ---
 AllCops:
   Exclude:
-  - vendor/**/*
   - db/**/*
-  - tmp/**/*
   - db/schema.rb
+  - tmp/**/*
+  - vendor/**/*
   DisplayCopNames: false
   StyleGuideCopsOnly: false
   TargetRubyVersion: 3.1

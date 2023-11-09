@@ -14,9 +14,9 @@
 ---
 AllCops:
   Exclude:
-  - vendor/**/*
   - db/**/*
   - tmp/**/*
+  - vendor/**/*
   DisplayCopNames: false
   StyleGuideCopsOnly: false
   TargetRubyVersion: 3.1

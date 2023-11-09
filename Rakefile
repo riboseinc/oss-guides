@@ -63,6 +63,7 @@ namespace :build do
       y = YAML.safe_load(File.read(full_path))
       acc.deep_merge!(
         y,
+        sort_merged_arrays: true,
         extend_existing_arrays: true,
       )
     end
