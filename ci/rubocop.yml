@@ -14,9 +14,9 @@
 ---
 AllCops:
   Exclude:
-  - vendor/**/*
   - db/**/*
   - tmp/**/*
+  - vendor/**/*
   DisplayCopNames: false
   StyleGuideCopsOnly: false
   TargetRubyVersion: 3.1
@@ -75,7 +75,7 @@ Style/ClassVars:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-class-vars
   Enabled: false
 Style/CollectionMethods:
-  Enabled: true
+  Enabled: false
   PreferredMethods:
     find: detect
     inject: reduce
@@ -229,7 +229,7 @@ Naming/BinaryOperatorParameterName:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#other-arg
   Enabled: false
 Metrics/ParameterLists:
-  Description: Avoid parameter lists longer than three or four parameters.
+  Description: Avoid long parameter lists.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#too-many-params
   Enabled: true
   Max: 5

@@ -61,7 +61,11 @@ namespace :build do
     aggregation = src.reduce({}) do |acc, file|
       full_path = path_in_project(file)
       y = YAML.safe_load(File.read(full_path))
-      acc.deep_merge(y)
+      acc.deep_merge!(
+        y,
+        sort_merged_arrays: true,
+        extend_existing_arrays: true,
+      )
     end
 
     target_full_path = path_in_project(to)
