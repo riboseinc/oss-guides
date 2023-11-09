@@ -66,9 +66,11 @@ Style/CollectionMethods:
 Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: comma
 
-# From 322cb2c179a721fed382a691124185a01811cf11
+# Contrary to what hound apparently prefers
+# (see 322cb2c179a721fed382a691124185a01811cf11),
+# we prefer trailing dots.
 Layout/DotPosition:
-  EnforcedStyle: leading
+  EnforcedStyle: trailing
 
 # Delete following lines after migrating to Rubocop 2.x, as these checks
 # will be enabled by default.
