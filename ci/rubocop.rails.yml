@@ -78,7 +78,7 @@ Style/ClassVars:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-class-vars
   Enabled: false
 Style/CollectionMethods:
-  Enabled: true
+  Enabled: false
   PreferredMethods:
     find: detect
     inject: reduce
@@ -232,7 +232,7 @@ Naming/BinaryOperatorParameterName:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#other-arg
   Enabled: false
 Metrics/ParameterLists:
-  Description: Avoid parameter lists longer than three or four parameters.
+  Description: Avoid long parameter lists.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#too-many-params
   Enabled: true
   Max: 5
@@ -355,7 +355,7 @@ Layout/ConditionPosition:
 Layout/DotPosition:
   Description: Checks the position of the dot in multi-line method calls.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#consistent-multi-line-chains
-  EnforcedStyle: trailing
+  EnforcedStyle: leading
 Layout/ExtraSpacing:
   Description: Do not use unnecessary spacing.
   Enabled: true
