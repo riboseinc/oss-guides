@@ -135,13 +135,32 @@ Performance/StringInclude: # (new in 1.7)
 Performance/Sum: # (new in 1.8)
   Enabled: true
 
-Style/CollectionCompact:
+Style/ArgumentsForwarding: # (new in 1.1)
+  Enabled: true
+
+Style/CollectionCompact: # (new in 1.2)
   Description: Checks for places where custom logic on rejection nils from arrays and hashes can be replaced with {Array,Hash}#{compact,compact!}.
   StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#stylecollectioncompact
   Enabled: true
 
+Style/DocumentDynamicEvalDefinition: # (new in 1.1)
+  Enabled: true
+
+Style/NegatedIfElseCondition: # (new in 1.2)
+  Enabled: true
+
+Style/NilLambda: # (new in 1.3)
+  Enabled: true
+
+Style/RedundantArgument: # (new in 1.4)
+  Enabled: true
+
+Style/SwapValues: # (new in 1.1)
+  Enabled: true
+
 Style/CollectionMethods:
   Enabled: false
+
 Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: comma
 

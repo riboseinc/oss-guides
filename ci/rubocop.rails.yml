@@ -540,12 +540,22 @@ Performance/StringInclude:
   Enabled: true
 Performance/Sum:
   Enabled: true
+Style/ArgumentsForwarding:
+  Enabled: true
 Style/CollectionCompact:
   Description: Checks for places where custom logic on rejection nils from arrays
     and hashes can be replaced with {Array,Hash}#{compact,compact!}.
   StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#stylecollectioncompact
   Enabled: true
-Style/ArgumentsForwarding:
+Style/DocumentDynamicEvalDefinition:
+  Enabled: true
+Style/NegatedIfElseCondition:
+  Enabled: true
+Style/NilLambda:
+  Enabled: true
+Style/RedundantArgument:
+  Enabled: true
+Style/SwapValues:
   Enabled: true
 Gemspec/RequireMFA:
   Enabled: false
