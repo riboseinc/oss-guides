@@ -74,9 +74,9 @@ Style/TrailingCommaInArguments:
 
 # Contrary to what hound apparently prefers
 # (see 322cb2c179a721fed382a691124185a01811cf11),
-# we prefer trailing dots.
+# we prefer leading dots.
 Layout/DotPosition:
-  EnforcedStyle: trailing
+  EnforcedStyle: leading
 
 # Delete following lines after migrating to Rubocop 2.x, as these checks
 # will be enabled by default.
