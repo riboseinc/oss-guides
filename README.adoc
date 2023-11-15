@@ -25,9 +25,9 @@ High level guidelines:
 * https://github.com/thoughtbot/guides/tree/master/protocol/git[Git Protocol]
 * https://github.com/thoughtbot/guides/tree/master/code-review[Code Review]
 
-== Ruby Projects
+== Ruby Development
 
-For Ruby-based projects, we use
+For Ruby-based development, we use
 https://github.com/thoughtbot/guides/tree/master/style/ruby[ruby-style-guide],
 which is based on the
 https://github.com/bbatsov/ruby-style-guide[bbatsov-guide]
@@ -43,17 +43,27 @@ root.  Particularly, this directory contains:
 
 Once everything is setup, https://houndci.com[Hound CI]
 should comment on each of the Pull Requests whenever there is a
-violations, and please do not merge it until you resolve those.
+violations, and please resolve before merging.
 
 === Updating guides
 
-Source guides are kept in `src/rubocop`.  Whenever you update any of those,
-please run `rake build:rubocop` and commit generated changes.
+==== Ruby Development
+
+Source guides for Ruby are kept in `src/rubocop`.
+Whenever you update any of those,
+please run `bundle exec rake build:rubocop` and commit the generated changes.
+
+==== Development in Other Languages
+
+Source guides for other languages should be kept under `src/${language}`.
+
+To maintainers of this guide:
+please update this README accordingly when guides for other languages are added.
 
 === Automatic Checks
 
-We use several tools to measure code quality in our projects.  The typical setup
-is:
+We use several tools to measure and maintain code quality in our projects.
+The typical setup is:
 
 Code Climate::
 Performs additional code quality analysis (complexity etc).  Optionally,
@@ -68,7 +78,7 @@ CodeCov::
 Measures test coverage.
 Hound CI::
 Runs Rubocop, that is validates code against our style guide.
-Travis CI::
+GitHub Actions::
 Continuous integration.
 
 === Propagating guides to sister organizations
