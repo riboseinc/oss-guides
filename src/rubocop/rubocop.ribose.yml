@@ -6,6 +6,19 @@ AllCops:
   DisplayCopNames: false
   StyleGuideCopsOnly: false
   TargetRubyVersion: 3.1
+
+Lint/DuplicateBranch: # (new in 1.3)
+  Enabled: true
+
+Lint/DuplicateRegexpCharacterClassElement: # (new in 1.1)
+  Enabled: true
+
+Lint/EmptyBlock: # (new in 1.1)
+  Enabled: true
+
+Lint/EmptyClass: # (new in 1.3)
+  Enabled: true
+
 Layout/LineLength:
   Description: Limit lines to 80 characters.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#80-character-limits
@@ -15,9 +28,23 @@ Layout/LineLength:
   URISchemes:
   - http
   - https
+
+Lint/NoReturnInBeginEndBlocks: # (new in 1.2)
+  Enabled: true
+
 Lint/ShadowedArgument:
   Enabled: true
   IgnoreImplicitReferences: true
+
+Lint/ToEnumArguments: # (new in 1.1)
+  Enabled: true
+
+Lint/UnexpectedBlockArity: # (new in 1.5)
+  Enabled: true
+
+Lint/UnmodifiedReduceAccumulator: # (new in 1.1)
+  Enabled: true
+
 Metrics/AbcSize:
   Description: A calculated magnitude based on number of assignments, branches, and
     conditions.
@@ -62,13 +89,77 @@ Metrics/PerceivedComplexity:
   Enabled: true
   Max: 7
 
-Style/CollectionCompact:
+Performance/AncestorsInclude: # (new in 1.7)
+  Enabled: true
+
+Performance/BigDecimalWithNumericArgument: # (new in 1.7)
+  Enabled: true
+
+Performance/BlockGivenWithExplicitBlock: # (new in 1.9)
+  Enabled: true
+
+Performance/CollectionLiteralInLoop: # (new in 1.8)
+  Enabled: true
+
+Performance/ConstantRegexp: # (new in 1.9)
+  Enabled: true
+
+Performance/MethodObjectAsBlock: # (new in 1.9)
+  Enabled: true
+
+Performance/RedundantEqualityComparisonBlock: # (new in 1.10)
+  Enabled: true
+
+Performance/RedundantSortBlock: # (new in 1.7)
+  Enabled: true
+
+Performance/RedundantSplitRegexpArgument: # (new in 1.10)
+  Enabled: true
+
+Performance/RedundantStringChars: # (new in 1.7)
+  Enabled: true
+
+Performance/ReverseFirst: # (new in 1.7)
+  Enabled: true
+
+Performance/SortReverse: # (new in 1.7)
+  Enabled: true
+
+Performance/Squeeze: # (new in 1.7)
+  Enabled: true
+
+Performance/StringInclude: # (new in 1.7)
+  Enabled: true
+
+Performance/Sum: # (new in 1.8)
+  Enabled: true
+
+Style/ArgumentsForwarding: # (new in 1.1)
+  Enabled: true
+
+Style/CollectionCompact: # (new in 1.2)
   Description: Checks for places where custom logic on rejection nils from arrays and hashes can be replaced with {Array,Hash}#{compact,compact!}.
   StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#stylecollectioncompact
   Enabled: true
 
+Style/DocumentDynamicEvalDefinition: # (new in 1.1)
+  Enabled: true
+
+Style/NegatedIfElseCondition: # (new in 1.2)
+  Enabled: true
+
+Style/NilLambda: # (new in 1.3)
+  Enabled: true
+
+Style/RedundantArgument: # (new in 1.4)
+  Enabled: true
+
+Style/SwapValues: # (new in 1.1)
+  Enabled: true
+
 Style/CollectionMethods:
   Enabled: false
+
 Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: comma
 
