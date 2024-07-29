@@ -469,5 +469,3 @@ Style/CollectionCompact:
   Enabled: true
 Style/ArgumentsForwarding:
   Enabled: true
-Gemspec/RequireMFA:
-  Enabled: false
