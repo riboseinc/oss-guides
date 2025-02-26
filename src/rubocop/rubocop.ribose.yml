@@ -26,6 +26,7 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*"
+    - "**/*.gemspec"
 Metrics/BlockNesting:
   Description: Avoid excessive block nesting
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#three-is-the-number-thou-shalt-count
@@ -49,7 +50,6 @@ Metrics/MethodLength:
   Max: 10
   Exclude:
   - "spec/**/*"
-  - "**/*.gemspec"
   CountAsOne: ['array', 'heredoc']
 Metrics/ParameterLists:
   Description: Avoid long parameter lists.
