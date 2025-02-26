@@ -187,6 +187,7 @@ Metrics/MethodLength:
   CountComments: true
   Max: 10
   Exclude:
+  - "**/*.gemspec"
   - spec/**/*
   CountAsOne:
   - array

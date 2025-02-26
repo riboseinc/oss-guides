@@ -49,6 +49,7 @@ Metrics/MethodLength:
   Max: 10
   Exclude:
   - "spec/**/*"
+  - "**/*.gemspec"
   CountAsOne: ['array', 'heredoc']
 Metrics/ParameterLists:
   Description: Avoid long parameter lists.
