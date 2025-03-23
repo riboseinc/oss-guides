@@ -1,6 +1,6 @@
 AllCops:
 
-require:
+plugins:
   - rubocop-performance
 
 Naming/AccessorMethodName:
