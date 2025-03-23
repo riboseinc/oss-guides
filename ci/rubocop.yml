@@ -20,7 +20,7 @@ AllCops:
   DisplayCopNames: false
   StyleGuideCopsOnly: false
   TargetRubyVersion: 3.1
-require:
+plugins:
 - rubocop-performance
 Naming/AccessorMethodName:
   Description: Check the naming of accessor methods for get_/set_.

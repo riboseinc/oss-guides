@@ -2,7 +2,7 @@ AllCops:
   Exclude:
     - db/schema.rb
 
-require:
+plugins:
   - rubocop-rails
 
 
