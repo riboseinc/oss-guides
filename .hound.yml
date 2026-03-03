@@ -1,4 +1,0 @@
-ruby:
-  Enabled: true
-  config_file: ci/rubocop.yml
-  version: 1.22.1

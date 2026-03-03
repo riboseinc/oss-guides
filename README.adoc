@@ -21,29 +21,26 @@ High level guidelines:
 
 == General
 
-* https://github.com/thoughtbot/guides/tree/master/best-practices[Best Practices]
-* https://github.com/thoughtbot/guides/tree/master/protocol/git[Git Protocol]
-* https://github.com/thoughtbot/guides/tree/master/code-review[Code Review]
+* https://github.com/thoughtbot/guides/tree/main/general[General best practices]
+* https://github.com/thoughtbot/guides/tree/main/git[Git]
+* https://github.com/thoughtbot/guides/tree/main/code-review[Code review]
 
 == Ruby Development
 
 For Ruby-based development, we use
-https://github.com/thoughtbot/guides/tree/master/style/ruby[ruby-style-guide],
-which is based on the
-https://github.com/bbatsov/ruby-style-guide[bbatsov-guide]
-with some customized preferences.
+https://github.com/thoughtbot/guides/tree/main/ruby[ruby-style-guide].
 
 Once you start a new project, please copy the contents of
 link:for_new_projects/ruby[for_new_projects/ruby] directory to your project
 root.  Particularly, this directory contains:
 
 * link:for_new_projects/ruby/.rubocop.yml[Rubocop config]
-* link:for_new_projects/ruby/.hound.yml[Hound CI config]
 * link:for_new_projects/ruby/.editorconfig[Editor config]
 
-Once everything is setup, https://houndci.com[Hound CI]
-should comment on each of the Pull Requests whenever there is a
-violations, and please resolve before merging.
+Ensure that your GitHub Actions workflow includes a step to run Rubocop against
+your codebase, and make sure that your code passes Rubocop checks before
+submitting a pull request.
+
 
 === Updating guides
 
@@ -65,25 +62,23 @@ please update this README accordingly when guides for other languages are added.
 We use several tools to measure and maintain code quality in our projects.
 The typical setup is:
 
-Code Climate::
-Performs additional code quality analysis (complexity etc).  Optionally,
-Code Climate is capable of running Rubocop too, however it is strongly
-discouraged to enable that.  Due to frequent breaking changes, style guide must
-be written for specific Rubocop version, and our style guide is meant to be
-compatible with Hound.  See
-https://github.com/riboseinc/oss-guides/pull/3#issuecomment-351883526[this]
-for respective discussion.  Moreover, Code Climate is capable of measuring test
-coverage, however we prefer CodeCov for that.
-CodeCov::
-Measures test coverage.
-Hound CI::
-Runs Rubocop, that is validates code against our style guide.
+Rubocop::
+Static code analyzer for Ruby. The configuration is provided in
+`ci/` directory which will be run as part of CI.
+
+GitHub CodeQL::
+Performs security analysis.
+
 GitHub Actions::
 Continuous integration.
 
-=== Propagating guides to sister organizations
 
-This repository is mirrored in every GitHub organization that Ribose Inc.
+=== Propagating guides to sister GitHub organizations
+
+NOTE: This section is outdated. We should probably remove the mirroring setup
+and just keep this repository in the `riboseinc` organization.
+
+This repository is mirrored in every GitHub organization that Ribose
 manages in order to workaround Hound CI limitation that organization-wide style
 guide must be kept in a repository within that organization.
 Mirrors are synchronized via GitHub Actions, specifically `propagate` workflow
@@ -98,4 +93,3 @@ In order to set up another mirror, following steps should be performed:
 == Credits
 
 This guide is maintained by https://www.ribose.com[Ribose Inc.]
-
