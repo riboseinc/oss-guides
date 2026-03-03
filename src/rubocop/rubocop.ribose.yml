@@ -5,7 +5,7 @@ AllCops:
   - "tmp/**/*"
   DisplayCopNames: false
   StyleGuideCopsOnly: false
-  TargetRubyVersion: 3.1
+  TargetRubyVersion: 3.4
   NewCops: enable
 
 Lint/DuplicateBranch: # (new in 1.3)
