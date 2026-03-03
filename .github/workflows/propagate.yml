@@ -3,7 +3,7 @@ name: Propagate to mirrors
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 jobs:
@@ -37,7 +37,7 @@ jobs:
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v1
         with:
           github_token: ${{ secrets.RIBOSE_CI_OSS_GUIDE_TOKEN }}
           repository: ${{ matrix.repository }}
