@@ -497,6 +497,9 @@ Lint/EmptyBlock:
   Enabled: true
 Lint/EmptyClass:
   Enabled: true
+Lint/MissingSuper:
+  AllowedParentClasses:
+  - Liquid::Drop
 Lint/NoReturnInBeginEndBlocks:
   Enabled: true
 Lint/ShadowedArgument:
